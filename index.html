@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christ Embassy - Ogombo 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0A2540;
+            --accent-blue: #1A3B5D;
+            --gold-main: #D4AF37;
+            --gold-hover: #AA820A;
+            --bg-white: #FFFFFF;
+            --light-bg: #F4F6F9;
+            --dark-text: #111827;
+            --muted-text: #4B5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Top Announcement Bar */
+        .top-bar {
+            background-color: var(--gold-main);
+            color: var(--primary-blue);
+            padding: 8px 5%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--primary-blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-title {
+            color: var(--bg-white);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .brand-title span {
+            color: var(--gold-main);
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--bg-white);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-main);
+        }
+
+        /* Hero & Logo Banner Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 5px solid var(--gold-main);
+        }
+
+        .logo-container {
+            width: 95%;
+            max-width: 900px;
+            margin: 0 auto 25px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--bg-white);
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: var(--gold-main);
+        }
+
+        .hero h3 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            color: #E2E8F0;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+
+        .btn-gold {
+            background-color: var(--gold-main);
+            color: var(--primary-blue);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            color: var(--bg-white);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold-main);
+            border: 2px solid var(--gold-main);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold-main);
+            color: var(--primary-blue);
+        }
+
+        /* Leadership Section */
+        .leaders-section {
+            background-color: var(--light-bg);
+            padding: 60px 5%;
+        }
+
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .leader-card {
+            background: var(--bg-white);
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .leader-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold-main);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .leader-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+        }
+
+        .leader-card p {
+            color: var(--muted-text);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--gold-main);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Program Schedules Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--gold-main);
+            border-right: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            border-left: 1px solid #E2E8F0;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .time-badge {
+            display: inline-block;
+            background-color: var(--gold-main);
+            color: var(--primary-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Interactive Q&A Form Section */
+        .qa-section {
+            background-color: var(--light-bg);
+            border-radius: 16px;
+            padding: 40px 25px;
+        }
+
+        .form-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-blue);
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--gold-main);
+        }
+
+        /* Footer & Location Section */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--bg-white);
+            padding: 50px 5% 20px 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+        }
+
+        .location-info {
+            margin: 20px 0;
+            color: #E2E8F0;
+            font-size: 1rem;
+        }
+
+        .location-info i {
+            color: var(--gold-main);
+            margin-right: 8px;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .copyright {
+            color: #94A3B8;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--accent-blue);
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .logo-container { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        Welcome to Christ Embassy - Ogombo 1 | Giving Your Life A Meaning
+    </div>
+
+    <header>
+        <nav>
+            <div class="brand-title">
+                CHRIST EMBASSY
+                <span>OGOMBO 1</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#leadership">Our Leadership</a></li>
+                <li><a href="#programs">Service Times</a></li>
+                <li><a href="#qa">Sunday Service Q&A</a></li>
+                <li><a href="#prayer">Prayer Request</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="logo-container">
+            <img src="pao.jpg" alt="Christ Embassy Ogombo 1 Banner" id="church-banner">
+        </div>
+
+        <h1>Christ Embassy</h1>
+        <h3>OGOMBO 1</h3>
+        <p>A place for spiritual growth, fervent prayer, and discovering God's word.</p>
+
+        <div class="hero-btns">
+            <a href="#qa" class="btn btn-gold"><i class="fa-solid fa-question-circle"></i> Ask Service Question</a>
+            <a href="#prayer" class="btn btn-outline"><i class="fa-solid fa-hands-praying"></i> Request Prayer</a>
+        </div>
+    </div>
+
+    <section class="leaders-section" id="leadership">
+        <div class="section-title">
+            <h2>Our Leadership</h2>
+        </div>
+        <div class="leaders-grid">
+            <div class="leader-card">
+                <img src="pst.jpeg" alt="Rev. (Dr.) Chris Oyakhilome" class="leader-img">
+                <h3>Rev. (Dr.) Chris Oyakhilome, DSc, DSc, DD</h3>
+                <p>Founder and President of LoveWorld</p>
+            </div>
+            <div class="leader-card">
+                <img src="name.jpeg" alt="Pastor Adeola Philips" class="leader-img">
+                <h3>Pastor Adeola Philips</h3>
+                <p>Zonal Pastor</p>
+            </div>
+            <div class="leader-card">
+                <img src="pal.jpg" alt="Pastor Emeka Ogbona" class="leader-img">
+                <h3>Pastor Emeka Ogbona</h3>
+                <p>Group Pastor</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs">
+        <div class="section-title">
+            <h2>Our Programs & Service Times</h2>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <img src="service.png" alt="Sunday Service" class="card-img">
+                <h3>Sunday Service</h3>
+                <div class="time-badge">9:00 AM - 12:00 PM</div>
+                <p>Join us for an uplifting time of praise, worship, and insightful teaching of God's Word.</p>
+            </div>
+
+            <div class="card">
+                <img src="week.png" alt="Midweek Service" class="card-img">
+                <h3>Midweek Service</h3>
+                <div class="time-badge">Wednesdays: 6:30 PM - 8:00 PM</div>
+                <p>Deepen your knowledge of the scriptures and recharge your spirit mid-week.</p>
+            </div>
+
+            <div class="card">
+                <img src="level.png" alt="Saturday Prayer" class="card-img">
+                <h3>Saturday Prayer</h3>
+                <div class="time-badge">Saturdays: 7:00 AM - 8:00 AM</div>
+                <p>Fervent morning prayer sessions designed to strengthen faith and usher in spiritual victories.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="qa">
+        <div class="qa-section">
+            <div class="section-title">
+                <h2>Sunday Service Questions</h2>
+                <p style="color: var(--muted-text); margin-top: 5px;">Have a question about something you didn't quite understand during the Sunday Service? Ask below!</p>
+            </div>
+
+            <div class="form-container">
+                <form id="qaForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topic">Service Date / Sermon Title</label>
+                        <input type="text" id="topic" placeholder="e.g., Sunday Service - Faith & Word">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="question">Your Question</label>
+                        <textarea id="question" rows="4" placeholder="Type what you need clarity on..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">
+                        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="prayer">
+        <div class="footer-content">
+            <h2 style="color: var(--gold-main); margin-bottom: 10px;">Christ Embassy Ogombo 1</h2>
+            
+            <div class="location-info">
+                <p><i class="fa-solid fa-location-dot"></i> Lagos, Eti-Osa, Ajah, Ogombo, Opposite Ogombo Junior Secondary School.</p>
+            </div>
+
+            <p>Need counseling or urgent prayer? Connect directly with us on WhatsApp.</p>
+
+            <a href="https://wa.me/2348071688631?text=Hello%20Christ%20Embassy%20Ogombo%201,%20I%20have%20a%20prayer%20request." target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 Christ Embassy Ogombo 1. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('qaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Replace with your church's WhatsApp phone number in international format (without '+' or '00')
+            // Example for Nigeria: '2348012345678'
+            const phoneNumber = "2348071688631";
+
+            // Get form inputs
+            const name = document.getElementById('name').value.trim();
+            const topic = document.getElementById('topic').value.trim() || 'N/A';
+            const question = document.getElementById('question').value.trim();
+
+            // Format the message template
+            const message = `Hello Christ Embassy Ogombo 1,\n\nI have a question regarding Sunday Service:\n\n👤 *Name:* ${name}\n📖 *Sermon/Topic:* ${topic}\n❓ *Question:* ${question}`;
+
+            // Create WhatsApp web URL
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
